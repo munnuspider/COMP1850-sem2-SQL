@@ -13,3 +13,7 @@
 -- write your sql code here
 
 SELECT * from countries;
+SELECT COUNT(Country) FROM Countries;
+SELECT Continent, COUNT(Country) FROM Countries GROUP BY Continent;
+SELECT Continent, SUM(Population) FROM Countries GROUP BY Continent;
+SELECT Continent, AVG(GDPPerCapita) FROM Countries GROUP BY Continent;
