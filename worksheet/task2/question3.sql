@@ -7,5 +7,6 @@ COUNT(e.EnrolmentId) AS TotalEnrolments
 FROM Department d
 LEFT JOIN Course c ON d.DepartmentId = c.DepartmentId
 LEFT JOIN Enrolment e ON c.CourseId = e.CourseId
-GROUP BY TotalEnrolments DESC;
+GROUP BY d.DepartmentName
+ORDER BY TotalEnrolments DESC;
 
