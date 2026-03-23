@@ -2,9 +2,10 @@
 -- Expected Columns:
 -- DepartmentName, TotalEnrolments
 
-SELECT DepartmentName, TotalEnrolments
-FROM Department
-JOIN Course ON Department.DepartmentId = Course.DepartmentId
-JOIN Enrolment ON Course.CourseId = Enrolment.CourseId
-GROUP BY DepartmentName;
+SELECT d.DepartmentName,
+COUNT(e.EnrolmentId) AS TotalEnrolments
+FROM Department d
+LEFT JOIN Course c ON d.DepartmentId = c.DepartmentId
+LEFT JOIN Enrolment e ON c.CourseId = e.CourseId
+GROUP BY TotalEnrolments DESC;
 
